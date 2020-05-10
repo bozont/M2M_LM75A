@@ -208,9 +208,7 @@ bool M2M_LM75A::read16bitRegister(const uint8_t reg, uint16_t& response)
 	}
 	uint8_t part1 = Wire.read();
 	uint8_t part2 = Wire.read();
-	
-	//response = (Wire.read() << 8) | Wire.read();
-	uint16_t temp = part1 << 8 | part2;
+
 	response = part1 << 8 | part2;
 	return true;
 }
